@@ -1,0 +1,81 @@
+#include<iostream>
+using namespace std;
+class Complex
+{
+    public:
+    int x,y;
+    Complex()
+    {
+        
+    }
+    Complex(int a,int b)
+    {
+        x=a;
+        y=b;
+    }
+    Complex operator + (const Complex cobj)
+    {
+        Complex temp;
+        temp.x= x + cobj.x;
+        temp.y= y + cobj.y;
+        return temp;
+    }
+    
+     Complex operator-(const Complex cobj)
+    {
+        Complex temp;
+        temp.x= x - cobj.x;
+        temp.y= y - cobj.y;
+        return temp;
+    }
+    
+    Complex operator*(const Complex cobj)
+    {
+        Complex temp;
+        temp.x= x * cobj.x;
+        temp.y= y * cobj.y;
+        return temp;
+    }
+    
+    friend ostream& operator<<(ostream& os,Complex& comp)
+    {
+        os<<comp.x<<"+"<<comp.y<<"i\n";
+        return os;
+        
+    }
+    
+    friend istream& operator>>(istream& is,Complex& comp)
+    {
+        cout<<"\nenter two numbers :";
+        
+        is>>comp.x>>comp.y;
+        return is;
+        
+    }
+    
+    
+};
+
+int main()
+{
+    Complex c1,c2,c3;
+  /*  c1.x=12;
+    c2.x=10;
+    
+    c1.y=12;
+    c2.y=10;*/
+    
+    cin>>c1;
+    cin>>c2;
+    c3=c1+c2;
+    cout<<c3;
+    
+    
+     c3=c1-c2;
+    cout<<c3;
+    
+    c3=c1*c2;
+    cout<<c3;
+    
+    return 0;
+}
