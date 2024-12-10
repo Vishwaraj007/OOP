@@ -1,0 +1,78 @@
+#include<iostream>
+using namespace std;
+static int count;
+class Student
+{
+public:
+char name[50],clas[20],dob[20],blood_group[5],address[50],telephone[10],driving_Lno[20];
+int roll_no;
+
+Student()
+{
+
+cout<<"\n\nname of student : ";
+cin>>name;
+cout<<"\nenter the class of student : ";
+cin>>clas;
+cout<<"\nenter date of birth : ";
+cin>>dob;
+cout<<"enter the blood group : ";
+cin>>blood_group;
+cout<<"enter the address : ";
+cin>>address;
+cout<<"enter the telephone number : ";
+cin>>telephone;
+cout<<"enter the driving liscene number : ";
+cin>>driving_Lno;
+cout<<"enter the roll no. : ";
+cin>>roll_no;
+
+}
+
+void putdata()
+{
+
+count++;
+cout<<"\n\n********** Student"<<count<<" *************";
+cout<<"\n\n\nYour Name : "<<name;
+cout<<"\nYour class : "<<clas;
+cout<<"\nYour Date of Birth : "<<dob;
+cout<<"\nYour Blood gorup : "<<blood_group;
+cout<<"\nYour address : "<<this->address;
+cout<<"\nYour telephone numebr : "<<telephone;
+cout<<"\nYour driving liscene number : "<<driving_Lno;
+cout<<"\nYour roll no. "<<roll_no;
+}
+
+
+
+};
+
+
+
+int main()
+{
+
+int n,i;
+cout<<"enter the number of student : ";
+cin>>n;
+Student *stud[n];
+for(i=0;i<n;i++)
+{
+stud[i]=new Student;
+
+
+
+}
+
+for(i=0;i<n;i++)
+{
+stud[i]->putdata();
+delete stud[i];
+
+
+}
+
+
+return 0;
+}
